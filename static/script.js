@@ -40,6 +40,8 @@ const topicColors = {
     "Press Conference": "#e5ad2c",
   };
 
+  const CLUSTER_WIDTH_RATIO = 0.62;
+
   const topicDotSize = {
     Immigration: "18px",
     "Election Fraud" : "16px",
@@ -64,6 +66,7 @@ const topicColors = {
   function normaliseSource(s){
     if (!s) return "Speech";
     if (["Statement", "Other", "Debate"].includes(s)) return "Speech";
+    return s;
   }
 
   fetch("/api/claims")
@@ -86,6 +89,7 @@ const topicColors = {
 function normalizeTopic(topic) {
     if(!topic) return "Other";
     if (topic.toLowerCase() === "election fraud") return "Election Fraud";
+    return topic;
 }
 
 function createDots() {
@@ -148,7 +152,7 @@ function getPosition(claim, index, view, width, height) {
         ["Election Fraud", "Immigration", "COVID-19", "Economy"],
         claim.id, width, height, 2
         );
-        return { ...p, size: topicDotSizes[claim.topic] || "11px", color: topicColors[claim.topic] || topicColors.Other };
+        return { ...p, size: topicDotSize[claim.topic] || "11px", color: topicColors[claim.topic] || topicColors.Other };
     }
     if (view === "source") {
         const p = clusterPosition(
