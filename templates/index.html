@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pattern of Deception</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+
+    <main id="top">
+      <section class="hero">
+
+        <img
+            src="{{ url_for('static', filename='trumphand.png') }}"
+            class="hero-pinocchio"
+            alt="Cartoon Trump Pinocchio"
+        >
+    
+        <div class="hero-inner">
+            <p class="eyebrow">Data Essay</p>
+    
+            <h1>Pattern of Deception</h1>
+    
+            <p class="opening">
+                A visual archive of false and misleading claims made by 
+                Donald Trump during his first presidency;
+                organized by topic, source, and repeated idea.
+            </p>
+        </div>
+    
+    </section>
+
+      <section id="patterns" class="scrolly">
+
+        <div class="sticky-visual">
+          <div class="visual-header">
+            <div>
+              <h2 id="visual-title">The archive</h2>
+            </div>
+            <div id="visible-count" class="visible-count">0 claims of 35,000</div>
+          </div>
+
+          <div id="dot-stage" class="dot-stage"></div>
+          <div id="legend" class="legend"></div>
+
+          <aside id="claim-preview" class="claim-preview">
+            <p class="preview-label">Click a dot</p>
+            <h3>No claim selected</h3>
+            <p>The quote will appear here.</p>
+          </aside>
+        </div>
+
+        <div class="steps">
+          <article class="step active" data-view="chaos">
+            <div class="step-inner">
+              <p class="step-number">01</p>
+              <h2>placeholder</h2>
+              <p>
+                placeholder
+              </p>
+            </div>
+          </article>
+
+          <article class="step" data-view="topic">
+            <div class="step-inner">
+              <p class="step-number">02</p>
+              <h2>placeholder</h2>
+              <p>
+                placeholder
+              </p>
+            </div>
+          </article>
+
+          <article class="step" data-view="source">
+            <div class="step-inner">
+              <p class="step-number">03</p>
+              <h2>placeholder</h2>
+              <p>
+                placeholder
+              </p>
+            </div>
+          </article>
+
+          <article class="step" data-view="idea">
+            <div class="step-inner">
+              <p class="step-number">04</p>
+              <h2>placeholder</h2>
+              <p>
+                placeholder
+              </p>
+            </div>
+          </article>
+        </div>
+
+      </section>
+
+      <section id="machine" class="machine-section">
+
+        <div class="section-intro">
+          <p class="eyebrow">Interactive machine</p>
+          <h2>Explore</h2>
+          <p>
+            placeholder
+          </p>
+        </div>
+
+        <div class="controls">
+          <div class="control-group">
+            <label>Topic</label>
+            <div class="button-row" id="topic-buttons"></div>
+          </div>
+          <div class="control-group">
+            <label for="source-filter">Source</label>
+            <select id="source-filter"></select>
+          </div>
+          <div class="control-group">
+            <label for="idea-filter">Repeated idea</label>
+            <select id="idea-filter"></select>
+          </div>
+          <div class="control-group">
+            <label for="search-filter">Search</label>
+            <input id="search-filter" type="text" placeholder="Search claim text..." />
+          </div>
+        </div>
+
+        <div class="machine-frame">
+          <div class="machine-header">
+            <span>Filtered claim slips</span>
+            <span id="machine-count">0 visible</span>
+          </div>
+          <div id="machine-slips" class="machine-slips"></div>
+          <div class="machine-footer">Showing a maximum of 36 readable slips at a time</div>
+        </div>
+
+      </section>
+
+      <section id="selected" class="selected-section">
+        <div class="section-intro">
+          <p class="eyebrow">Selected claims</p>
+          <h2>Readable examples.</h2>
+          <p>
+            placeholder
+          </p>
+        </div>
+        <div id="selected-claims" class="selected-claims"></div>
+      </section>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
