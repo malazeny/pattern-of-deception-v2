@@ -122,7 +122,7 @@ const titleMap = {
 };
 
 visualTitle.textContent = titleMap[view];
-visibleCount.textContent = `${claims.length} claims`;
+visibleCount.textContent = `${claims.length} claims of 30,575`;
 
 dots.forEach((dot, index) => {
     const claim = claims[index];
