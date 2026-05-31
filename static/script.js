@@ -18,26 +18,26 @@ const stage = document.getElementById("dot-stage"),
   selectedClaims = document.getElementById("selected-claims");
 
 const topicColors = {
-    "Election Fraud": "#1d4e89",
-    Immigration: "#c1121f",
+    "Election Fraud": "#3C3B6E",
+    Immigration: "#B22234",
     "COVID-19": "#171717",
-    Economy: "#e5ad2c",
+    Economy: "#ffffff",
     Other: "#6f685f",
   };
 
   const ideaColors = {
-    "Border Wall": "#c1121f",
-    "Stolen/Rigged Election": "#1d4e89",
+    "Border Wall": "#B22234",
+    "Stolen/Rigged Election": "#3C3B6E",
     "China/Origins of Virus": "#171717",
-    "Stock Market Records": "#e5ad2c",
+    "Stock Market Records": "#ffffff",
     Other: "#9b948b",
   };
 
   const sourceColors = {
     Speech: "#6f685f",
-    Tweet: "#1d4e89",
-    Interview: "#c1121f",
-    "Press Conference": "#e5ad2c",
+    Tweet: "#3C3B6E",
+    Interview: "#B22234",
+    "Press Conference": "#ffffff",
   };
 
   const CLUSTER_WIDTH_RATIO = 0.62;

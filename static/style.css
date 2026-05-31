@@ -3,10 +3,9 @@
   }
   
   :root {
-    --paper: #f7f1e8;
+    --paper: #cfc7bb;
     --ink: #171717;
     --muted: #6f685f;
-    --line: #d8cfc3;
     --red: #c1121f;
     --blue: #1d4e89;
     --gold: #e5ad2c;
@@ -16,7 +15,19 @@
   html {
     scroll-behavior: smooth;
   }
-  
+
+  body::before {
+    content: "";
+    display: block;
+    height: 4px;
+    background: linear-gradient(to right, #B22234 33%, #ffffff 33% 66%, #3C3B6E 66%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+  }
+
   body {
     margin: 0;
     background: var(--paper);
@@ -144,6 +155,8 @@
 
   .dot {
     position: absolute;
+    top: 0;
+    left: 0;
     width: var(--size);
     height: var(--size);
     border-radius: 50%;
