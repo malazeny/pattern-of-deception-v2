@@ -237,7 +237,7 @@ function renderLegend(view) {
 function showPreview(claim) {
     preview.innerHTML = `
       <p class="preview-label">${claim.topic} · ${claim.sourceType} · ${claim.idea}</p>
-      <h3>"${escapeHTML(claim.claim || "")}"</h3>
+      <h3>${escapeHTML(claim.claim || "")}</h3>
       <p>${claim.explanation ? escapeHTML(claim.explanation) : "No explanation added yet."}</p>
     `;
 }
@@ -323,7 +323,7 @@ function renderMachine() {
         (claim) => `
         <article class="machine-slip" style="--topic-color:${topicColors[claim.topic] || topicColors.Other}">
           <strong>${claim.topic} · ${claim.sourceType} · ${claim.idea}</strong>
-          "${escapeHTML(claim.claim || "")}"
+          ${escapeHTML(claim.claim || "")}
         </article>`
       )
       .join("");
@@ -345,7 +345,7 @@ function renderSelectedClaims() {
             <span>${claim.topic}</span>
             <span>${claim.sourceType}</span>
           </div>
-          <h3>"${escapeHTML(claim.claim || "")}"</h3>
+          <h3>${escapeHTML(claim.claim || "")}</h3>
         </article>`
       )
       .join("");
