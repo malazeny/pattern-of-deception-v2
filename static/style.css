@@ -503,5 +503,137 @@ input {
 .site-footer a:hover {
   color: var(--red);
 }
+
+.timeline-section {
+  width: min(1180px, calc(100% - 42px));
+  margin: 140px auto 0;
+  padding-top: 70px;
+  border-top: 1px solid var(--line);
+}
+ 
+.timeline-chart-wrap {
+  position: relative;
+  width: 100%;
+  margin: 32px 0 16px;
+  background: white;
+  border: 2px solid var(--ink);
+  padding: 20px 16px 12px;
+  box-shadow: 8px 8px 0 rgba(0,0,0,0.07);
+}
+ 
+#timeline-canvas {
+  display: block;
+  width: 100%;
+}
+ 
+.timeline-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(23,23,23,0.94);
+  color: white;
+  padding: 10px 13px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  min-width: 155px;
+  z-index: 50;
+  backdrop-filter: blur(4px);
+}
+ 
+.timeline-tooltip strong {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+  letter-spacing: 0.05em;
+}
+ 
+.tt-total {
+  display: block;
+  color: #e5ad2c;
+  font-weight: 900;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+ 
+.tt-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #cccccc;
+}
+ 
+.tt-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+ 
+.timeline-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+ 
+.tl-key {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+ 
+.tl-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+ 
+.timeline-annotations {
+  position: relative;
+  height: 52px;
+  margin-top: -8px;
+}
+ 
+.tl-annotation {
+  position: absolute;
+  left: var(--pos);
+  top: 0;
+  transform: translateX(-50%);
+  text-align: center;
+}
+ 
+.tl-line {
+  width: 1px;
+  height: 14px;
+  background: var(--ink);
+  margin: 0 auto 4px;
+}
+ 
+.tl-annotation p {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+ 
+.tl-annotation small {
+  font-weight: 400;
+  color: var(--muted);
+  text-transform: none;
+  letter-spacing: 0;
+}
   
   

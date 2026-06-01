@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pattern of Deception</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
   </head>
   <body>
 
@@ -104,6 +105,46 @@
 
       </section>
 
+      <section id="timeline" class="timeline-section">
+        <div class="section-intro">
+          <p class="eyebrow">Full archive · 2017–2021</p>
+          <h2>The claims escalated.</h2>
+          <p>
+            All 30,573 claims plotted month by month across the full presidency.
+            Hover over any bar to see the exact count and breakdown by topic.
+          </p>
+        </div>
+ 
+        <div class="timeline-chart-wrap">
+          <div id="timeline-chart"></div>
+          <div id="timeline-tooltip" class="timeline-tooltip" style="display:none;"></div>
+        </div>
+        
+        <div class="timeline-legend">
+          <span class="tl-key"><span class="tl-dot" style="background:#B22234"></span>Immigration</span>
+          <span class="tl-key"><span class="tl-dot" style="background:#3C3B6E"></span>Election Fraud</span>
+          <span class="tl-key"><span class="tl-dot" style="background:#171717"></span>COVID-19</span>
+          <span class="tl-key"><span class="tl-dot" style="background:#e5ad2c"></span>Economy</span>
+          <span class="tl-key"><span class="tl-dot" style="background:#9b948b"></span>Other</span>
+        </div>
+ 
+        <div class="timeline-annotations">
+          <div class="tl-annotation" style="--pos: 15%">
+            <div class="tl-line"></div>
+            <p>2018 midterms<br><small>immigration spike</small></p>
+          </div>
+          <div class="tl-annotation" style="--pos: 56%">
+            <div class="tl-line"></div>
+            <p>COVID-19<br><small>begins Mar 2020</small></p>
+          </div>
+          <div class="tl-annotation" style="--pos: 75%">
+            <div class="tl-line"></div>
+            <p>Election<br><small>Nov 2020 peak</small></p>
+          </div>
+        </div>
+      </section>
+
+
       <section id="machine" class="machine-section">
 
         <div class="section-intro">
@@ -144,7 +185,7 @@
 
       </section>
 
-      <section id="selected" class="selected-section">
+      <!-- <section id="selected" class="selected-section">
         <div class="section-intro">
           <p class="eyebrow">Selected claims</p>
           <h2>Readable examples.</h2>
@@ -153,7 +194,7 @@
           </p>
         </div>
         <div id="selected-claims" class="selected-claims"></div>
-      </section>
+      </section> -->
 
       <footer class="site-footer">
         <p>

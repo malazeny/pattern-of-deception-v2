@@ -1,0 +1,443 @@
+[
+  {
+    "month": "2017-01",
+    "total": 58,
+    "Immigration": 8,
+    "Election Fraud": 6,
+    "COVID-19": 0,
+    "Economy": 13,
+    "Other": 31
+  },
+  {
+    "month": "2017-02",
+    "total": 155,
+    "Immigration": 29,
+    "Election Fraud": 7,
+    "COVID-19": 0,
+    "Economy": 40,
+    "Other": 79
+  },
+  {
+    "month": "2017-03",
+    "total": 142,
+    "Immigration": 12,
+    "Election Fraud": 6,
+    "COVID-19": 0,
+    "Economy": 48,
+    "Other": 76
+  },
+  {
+    "month": "2017-04",
+    "total": 169,
+    "Immigration": 21,
+    "Election Fraud": 9,
+    "COVID-19": 0,
+    "Economy": 42,
+    "Other": 97
+  },
+  {
+    "month": "2017-05",
+    "total": 104,
+    "Immigration": 8,
+    "Election Fraud": 4,
+    "COVID-19": 0,
+    "Economy": 24,
+    "Other": 68
+  },
+  {
+    "month": "2017-06",
+    "total": 149,
+    "Immigration": 8,
+    "Election Fraud": 3,
+    "COVID-19": 0,
+    "Economy": 30,
+    "Other": 108
+  },
+  {
+    "month": "2017-07",
+    "total": 228,
+    "Immigration": 15,
+    "Election Fraud": 16,
+    "COVID-19": 0,
+    "Economy": 58,
+    "Other": 139
+  },
+  {
+    "month": "2017-08",
+    "total": 143,
+    "Immigration": 14,
+    "Election Fraud": 3,
+    "COVID-19": 0,
+    "Economy": 46,
+    "Other": 80
+  },
+  {
+    "month": "2017-09",
+    "total": 170,
+    "Immigration": 8,
+    "Election Fraud": 4,
+    "COVID-19": 0,
+    "Economy": 36,
+    "Other": 122
+  },
+  {
+    "month": "2017-10",
+    "total": 245,
+    "Immigration": 10,
+    "Election Fraud": 1,
+    "COVID-19": 0,
+    "Economy": 67,
+    "Other": 167
+  },
+  {
+    "month": "2017-11",
+    "total": 220,
+    "Immigration": 13,
+    "Election Fraud": 8,
+    "COVID-19": 0,
+    "Economy": 89,
+    "Other": 110
+  },
+  {
+    "month": "2017-12",
+    "total": 216,
+    "Immigration": 13,
+    "Election Fraud": 8,
+    "COVID-19": 0,
+    "Economy": 71,
+    "Other": 124
+  },
+  {
+    "month": "2018-01",
+    "total": 289,
+    "Immigration": 51,
+    "Election Fraud": 20,
+    "COVID-19": 0,
+    "Economy": 100,
+    "Other": 118
+  },
+  {
+    "month": "2018-02",
+    "total": 191,
+    "Immigration": 32,
+    "Election Fraud": 1,
+    "COVID-19": 0,
+    "Economy": 57,
+    "Other": 101
+  },
+  {
+    "month": "2018-03",
+    "total": 260,
+    "Immigration": 39,
+    "Election Fraud": 4,
+    "COVID-19": 0,
+    "Economy": 105,
+    "Other": 112
+  },
+  {
+    "month": "2018-04",
+    "total": 290,
+    "Immigration": 52,
+    "Election Fraud": 8,
+    "COVID-19": 0,
+    "Economy": 82,
+    "Other": 148
+  },
+  {
+    "month": "2018-05",
+    "total": 250,
+    "Immigration": 52,
+    "Election Fraud": 2,
+    "COVID-19": 0,
+    "Economy": 48,
+    "Other": 148
+  },
+  {
+    "month": "2018-06",
+    "total": 545,
+    "Immigration": 121,
+    "Election Fraud": 1,
+    "COVID-19": 0,
+    "Economy": 195,
+    "Other": 228
+  },
+  {
+    "month": "2018-07",
+    "total": 452,
+    "Immigration": 34,
+    "Election Fraud": 5,
+    "COVID-19": 0,
+    "Economy": 150,
+    "Other": 263
+  },
+  {
+    "month": "2018-08",
+    "total": 477,
+    "Immigration": 57,
+    "Election Fraud": 22,
+    "COVID-19": 0,
+    "Economy": 162,
+    "Other": 236
+  },
+  {
+    "month": "2018-09",
+    "total": 599,
+    "Immigration": 47,
+    "Election Fraud": 12,
+    "COVID-19": 0,
+    "Economy": 224,
+    "Other": 316
+  },
+  {
+    "month": "2018-10",
+    "total": 1206,
+    "Immigration": 215,
+    "Election Fraud": 21,
+    "COVID-19": 0,
+    "Economy": 381,
+    "Other": 589
+  },
+  {
+    "month": "2018-11",
+    "total": 868,
+    "Immigration": 180,
+    "Election Fraud": 55,
+    "COVID-19": 0,
+    "Economy": 247,
+    "Other": 386
+  },
+  {
+    "month": "2018-12",
+    "total": 270,
+    "Immigration": 102,
+    "Election Fraud": 2,
+    "COVID-19": 0,
+    "Economy": 25,
+    "Other": 141
+  },
+  {
+    "month": "2019-01",
+    "total": 731,
+    "Immigration": 386,
+    "Election Fraud": 14,
+    "COVID-19": 0,
+    "Economy": 107,
+    "Other": 224
+  },
+  {
+    "month": "2019-02",
+    "total": 484,
+    "Immigration": 138,
+    "Election Fraud": 7,
+    "COVID-19": 0,
+    "Economy": 119,
+    "Other": 220
+  },
+  {
+    "month": "2019-03",
+    "total": 551,
+    "Immigration": 98,
+    "Election Fraud": 22,
+    "COVID-19": 0,
+    "Economy": 144,
+    "Other": 287
+  },
+  {
+    "month": "2019-04",
+    "total": 685,
+    "Immigration": 150,
+    "Election Fraud": 10,
+    "COVID-19": 0,
+    "Economy": 165,
+    "Other": 360
+  },
+  {
+    "month": "2019-05",
+    "total": 575,
+    "Immigration": 56,
+    "Election Fraud": 13,
+    "COVID-19": 0,
+    "Economy": 184,
+    "Other": 322
+  },
+  {
+    "month": "2019-06",
+    "total": 677,
+    "Immigration": 95,
+    "Election Fraud": 25,
+    "COVID-19": 0,
+    "Economy": 200,
+    "Other": 357
+  },
+  {
+    "month": "2019-07",
+    "total": 544,
+    "Immigration": 80,
+    "Election Fraud": 12,
+    "COVID-19": 0,
+    "Economy": 181,
+    "Other": 271
+  },
+  {
+    "month": "2019-08",
+    "total": 530,
+    "Immigration": 28,
+    "Election Fraud": 18,
+    "COVID-19": 0,
+    "Economy": 238,
+    "Other": 246
+  },
+  {
+    "month": "2019-09",
+    "total": 641,
+    "Immigration": 62,
+    "Election Fraud": 18,
+    "COVID-19": 0,
+    "Economy": 168,
+    "Other": 393
+  },
+  {
+    "month": "2019-10",
+    "total": 1160,
+    "Immigration": 48,
+    "Election Fraud": 35,
+    "COVID-19": 0,
+    "Economy": 226,
+    "Other": 851
+  },
+  {
+    "month": "2019-11",
+    "total": 904,
+    "Immigration": 62,
+    "Election Fraud": 37,
+    "COVID-19": 0,
+    "Economy": 220,
+    "Other": 585
+  },
+  {
+    "month": "2019-12",
+    "total": 687,
+    "Immigration": 35,
+    "Election Fraud": 27,
+    "COVID-19": 0,
+    "Economy": 134,
+    "Other": 491
+  },
+  {
+    "month": "2020-01",
+    "total": 761,
+    "Immigration": 54,
+    "Election Fraud": 33,
+    "COVID-19": 2,
+    "Economy": 224,
+    "Other": 448
+  },
+  {
+    "month": "2020-02",
+    "total": 817,
+    "Immigration": 74,
+    "Election Fraud": 58,
+    "COVID-19": 64,
+    "Economy": 210,
+    "Other": 411
+  },
+  {
+    "month": "2020-03",
+    "total": 532,
+    "Immigration": 26,
+    "Election Fraud": 11,
+    "COVID-19": 271,
+    "Economy": 91,
+    "Other": 133
+  },
+  {
+    "month": "2020-04",
+    "total": 534,
+    "Immigration": 23,
+    "Election Fraud": 20,
+    "COVID-19": 273,
+    "Economy": 87,
+    "Other": 131
+  },
+  {
+    "month": "2020-05",
+    "total": 645,
+    "Immigration": 26,
+    "Election Fraud": 45,
+    "COVID-19": 185,
+    "Economy": 91,
+    "Other": 298
+  },
+  {
+    "month": "2020-06",
+    "total": 721,
+    "Immigration": 50,
+    "Election Fraud": 51,
+    "COVID-19": 120,
+    "Economy": 131,
+    "Other": 369
+  },
+  {
+    "month": "2020-07",
+    "total": 879,
+    "Immigration": 66,
+    "Election Fraud": 60,
+    "COVID-19": 197,
+    "Economy": 127,
+    "Other": 429
+  },
+  {
+    "month": "2020-08",
+    "total": 1657,
+    "Immigration": 101,
+    "Election Fraud": 212,
+    "COVID-19": 254,
+    "Economy": 306,
+    "Other": 784
+  },
+  {
+    "month": "2020-09",
+    "total": 2239,
+    "Immigration": 86,
+    "Election Fraud": 335,
+    "COVID-19": 370,
+    "Economy": 313,
+    "Other": 1135
+  },
+  {
+    "month": "2020-10",
+    "total": 3917,
+    "Immigration": 247,
+    "Election Fraud": 730,
+    "COVID-19": 623,
+    "Economy": 553,
+    "Other": 1764
+  },
+  {
+    "month": "2020-11",
+    "total": 1287,
+    "Immigration": 57,
+    "Election Fraud": 506,
+    "COVID-19": 129,
+    "Economy": 139,
+    "Other": 456
+  },
+  {
+    "month": "2020-12",
+    "total": 397,
+    "Immigration": 5,
+    "Election Fraud": 296,
+    "COVID-19": 26,
+    "Economy": 8,
+    "Other": 62
+  },
+  {
+    "month": "2021-01",
+    "total": 322,
+    "Immigration": 31,
+    "Election Fraud": 214,
+    "COVID-19": 7,
+    "Economy": 14,
+    "Other": 56
+  }
+]

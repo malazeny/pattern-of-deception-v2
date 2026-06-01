@@ -14,8 +14,8 @@ const stage = document.getElementById("dot-stage"),
   ideaFilter = document.getElementById("idea-filter"),
   searchFilter = document.getElementById("search-filter"),
   machineSlips = document.getElementById("machine-slips"),
-  machineCount = document.getElementById("machine-count"),
-  selectedClaims = document.getElementById("selected-claims");
+  machineCount = document.getElementById("machine-count");
+//   selectedClaims = document.getElementById("selected-claims");
 
 const topicColors = {
     "Election Fraud": "#3C3B6E",
@@ -83,7 +83,7 @@ const topicColors = {
         buildControls();
         updateVisual("chaos");
         renderMachine();
-        renderSelectedClaims();
+        // renderSelectedClaims();
         setupScroll();
     });
 function normalizeTopic(topic) {
@@ -329,27 +329,27 @@ function renderMachine() {
       .join("");
 }
 
-function renderSelectedClaims() {
-    const selected = [
-      ...claims.filter((c) => c.idea === "Border Wall").slice(0, 2),
-      ...claims.filter((c) => c.idea === "Stolen/Rigged Election").slice(0, 2),
-      ...claims.filter((c) => c.idea === "China/Origins of Virus").slice(0, 2),
-      ...claims.filter((c) => c.idea === "Stock Market Records").slice(0, 2),
-    ];
+// function renderSelectedClaims() {
+//     const selected = [
+//       ...claims.filter((c) => c.idea === "Border Wall").slice(0, 2),
+//       ...claims.filter((c) => c.idea === "Stolen/Rigged Election").slice(0, 2),
+//       ...claims.filter((c) => c.idea === "China/Origins of Virus").slice(0, 2),
+//       ...claims.filter((c) => c.idea === "Stock Market Records").slice(0, 2),
+//     ];
   
-    selectedClaims.innerHTML = selected
-      .map(
-        (claim) => `
-        <article class="selected-card">
-          <div class="selected-card-top">
-            <span>${claim.topic}</span>
-            <span>${claim.sourceType}</span>
-          </div>
-          <h3>${escapeHTML(claim.claim || "")}</h3>
-        </article>`
-      )
-      .join("");
-}
+//     selectedClaims.innerHTML = selected
+//       .map(
+//         (claim) => `
+//         <article class="selected-card">
+//           <div class="selected-card-top">
+//             <span>${claim.topic}</span>
+//             <span>${claim.sourceType}</span>
+//           </div>
+//           <h3>${escapeHTML(claim.claim || "")}</h3>
+//         </article>`
+//       )
+//       .join("");
+// }
 
 function unique(values) {
     return [...new Set(values.filter(Boolean))];
@@ -369,8 +369,170 @@ function unique(values) {
       .replaceAll("'", "&#039;");
   }
   
-  window.addEventListener("resize", () => {
-    const active = document.querySelector(".step.active");
-    updateVisual(active ? active.dataset.view : "chaos");
+  const TIMELINE_COLORS = {
+    Immigration:      "#B22234",
+    "Election Fraud": "#3C3B6E",
+    "COVID-19":       "#171717",
+    Economy:          "#e5ad2c",
+    Other:            "#9b948b",
+  };
+
+  const TOPIC_ORDER = ["Immigration", "Election Fraud", "COVID-19", "Economy", "Other"];
+
+  let tlData = [];
+
+fetch("/api/timeline")
+  .then(r => r.json())
+  .then(data => {
+    tlData = data;
+    drawTimeline();
   });
 
+function drawTimeline() {
+  const container = document.getElementById("timeline-chart");
+  if (!container || !tlData.length) return;
+
+  container.innerHTML = "";
+
+  const margin = { top: 20, right: 20, bottom: 40, left: 55 };
+  const totalW  = container.clientWidth;
+  const totalH  = Math.min(340, window.innerHeight * 0.4);
+  const W = totalW - margin.left - margin.right;
+  const H = totalH - margin.top  - margin.bottom;
+
+  const svg = d3.select("#timeline-chart")
+    .append("svg")
+    .attr("width",  totalW)
+    .attr("height", totalH);
+
+  const g = svg.append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);
+
+    const x = d3.scaleBand()
+    .domain(tlData.map(d => d.month))
+    .range([0, W])
+    .padding(0.15);
+
+  const maxTotal = d3.max(tlData, d => d.total);
+
+  const y = d3.scaleLinear()
+    .domain([0, maxTotal])
+    .nice()
+    .range([H, 0]);
+
+  const stack = d3.stack()
+    .keys(TOPIC_ORDER)
+    .value((d, key) => d[key] || 0);
+
+  const series = stack(tlData);
+
+  g.append("g")
+    .attr("class", "grid")
+    .call(
+      d3.axisLeft(y)
+        .ticks(4)
+        .tickSize(-W)
+        .tickFormat("")
+    )
+    .call(el => el.selectAll("line")
+      .attr("stroke", "rgba(0,0,0,0.07)")
+      .attr("stroke-width", 1)
+    );
+
+g.selectAll(".series")
+    .data(series)
+    .join("g")
+    .attr("class", "series")
+    .attr("fill", d => TIMELINE_COLORS[d.key])
+    .selectAll("rect")
+    .data(d => d)
+    .join("rect")
+      .attr("x",      d => x(d.data.month))
+      .attr("width",  x.bandwidth())
+      .attr("y",      H)           // start at bottom for animation
+      .attr("height", 0)           // start at 0 for animation
+      .transition()
+      .duration(800)
+      .delay((d, i) => i * 12)
+      .ease(d3.easeCubicOut)
+      .attr("y",      d => y(d[1]))
+      .attr("height", d => y(d[0]) - y(d[1]));
+    
+    const monthNames = ["","Jan","Feb","Mar","Apr","May","Jun",
+        "Jul","Aug","Sep","Oct","Nov","Dec"];
+
+    g.append("g")
+    .attr("transform", `translate(0,${H})`)
+    .call(
+    d3.axisBottom(x)
+    .tickValues(tlData
+    .filter(d => d.month.endsWith("-01") || d.month.endsWith("-07"))
+    .map(d => d.month))
+    .tickFormat(d => {
+    
+const [year, month] = d.split("-");
+    return month === "01" ? year : "Jul";
+    })
+    )
+.call(el => el.select(".domain")
+.attr("stroke", "#171717")
+.attr("stroke-width", 1.5)
+)
+.call(el => el.selectAll("text")
+.attr("font-family", "Arial, sans-serif")
+.attr("font-size", "9px")
+.attr("fill", "#6f685f")
+)
+.call(el => el.selectAll(".tick line").remove());
+
+g.append("g")
+    .call(
+      d3.axisLeft(y)
+        .ticks(4)
+        .tickFormat(d => d >= 1000 ? `${d/1000}k` : d)
+    )
+    .call(el => el.select(".domain").remove())
+    .call(el => el.selectAll("text")
+      .attr("font-family", "Arial, sans-serif")
+      .attr("font-size", "9px")
+      .attr("fill", "#9b948b")
+    )
+    .call(el => el.selectAll(".tick line").remove());
+
+    const tooltip = document.getElementById("timeline-tooltip");
+  const monthNamesArr = ["","Jan","Feb","Mar","Apr","May", "Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    
+g.selectAll(".hover-rect")
+    .data(tlData)
+    .join("rect")
+    .attr("class", "hover-rect")
+    .attr("x",       d => x(d.month))
+    .attr("width",   x.bandwidth())
+    .attr("y",       0)
+    .attr("height",  H)
+    .attr("fill",    "transparent")
+    .on("mousemove", (event, d) => {
+      const [year, month] = d.month.split("-");
+      tooltip.style.display = "block";
+      tooltip.style.left = (event.offsetX + margin.left + 12) + "px";
+      tooltip.style.top  = (event.offsetY + margin.top  - 10) + "px";
+      tooltip.innerHTML = `
+        <strong>${monthNamesArr[+month]} ${year}</strong>
+        <span class="tt-total">${d.total.toLocaleString()} claims</span>
+        ${TOPIC_ORDER.filter(t => d[t] > 0).map(t =>
+          `<span class="tt-row">
+            <span class="tt-dot" style="background:${TIMELINE_COLORS[t]}"></span>
+            ${t}: <b>${d[t]}</b>
+          </span>`
+        ).join("")}`;
+    })
+    .on("mouseleave", () => {
+      tooltip.style.display = "none";
+    });
+}
+
+window.addEventListener("resize", () => {
+    const active = document.querySelector(".step.active");
+  updateVisual(active ? active.dataset.view : "chaos");
+  drawTimeline();
+});
